@@ -7,6 +7,7 @@
     <groupId>com.hello</groupId>
     <artifactId>IOSTest</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -21,6 +22,12 @@
             <version>4.1.2</version>
         </dependency>
     </dependencies>
+
+    <!--Maven默认使用jdk1.5编译，需要改成更大的版本以免去一些编译问题如“<>”菱形语法在1.5不支持-->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <build>
         <plugins>

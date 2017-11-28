@@ -1,3 +1,5 @@
 /target
+/AndroidTest/target
+IOSTest/target/
 /.idea
 .DS_Store

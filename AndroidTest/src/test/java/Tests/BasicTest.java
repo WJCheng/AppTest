@@ -39,6 +39,11 @@ public class BasicTest extends BaseTest {
         }
         staffList.get(0).click();
 
+        List<MobileElement> subGroupList = findElements(By.id("rl_en_addr_book_role_name"));//Employee(31)
+        if (subGroupList.size() != 0){
+            subGroupList.get(1).click();
+        }
+
         WebElement el = AndroidHelper.scrollDownUnitFound(driver, target);
         if (el != null) {//find the checkbox to the left of the founded target.
             int targetX = el.getLocation().getX() - 20;
@@ -84,6 +89,11 @@ public class BasicTest extends BaseTest {
             groupList.get(1).click();
         }
         staffList.get(0).click();
+
+        List<MobileElement> subGroupList = findElements(By.id("rl_en_addr_book_role_name"));//Employee(31)
+        if (subGroupList.size() != 0){
+            subGroupList.get(1).click();
+        }
 
         MobileElement el = AndroidHelper.scrollDownUnitFound(driver, voteTarget);
         if (el != null) {//find the checkbox to the left of the founded target.
@@ -131,12 +141,17 @@ public class BasicTest extends BaseTest {
         if (groupList.size() == 1) {
             assertTrue(groupList.get(0).getText().contains("Groups"), "Groups wrong!");
         } else if (groupList.size() == 2) {
-            assertTrue(groupList.get(0).getText().contains("Admin")
-                            && groupList.get(1).getText().contains("Groups"),
+            assertTrue(groupList.get(0).getText().contains("admin")
+                            && groupList.get(1).getText().contains("Directory"),
                     "Admin group wrong!");
         }
 
         findElement(By.xpath(".//*[@text='HelloTech Staffs']")).click();
+        List<MobileElement> subGroupList = findElements(By.id("rl_en_addr_book_role_name"));//Employee(31)
+        if (subGroupList.size() != 0){
+            subGroupList.get(1).click();
+        }
+
         WebElement target = AndroidHelper.scrollDownUnitFound(driver, targetName);
         if (target != null) {
             target.click();

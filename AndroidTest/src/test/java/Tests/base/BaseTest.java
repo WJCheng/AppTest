@@ -114,6 +114,11 @@ public abstract class BaseTest {
         String account = "80000008";
         int len = account.length();
 
+        MobileElement deregisterDialogBtn = findElement(By.id("button1"));
+        if (deregisterDialogBtn != null){
+            deregisterDialogBtn.click();
+        }
+
         findElement(By.id("et_reg_mobile")).sendKeys(account);//account
         findElement(By.id("b_reg_next")).click();//Next
         findElement(By.id("button1")).click();//Agree
@@ -141,6 +146,11 @@ public abstract class BaseTest {
         if (findElements(By.xpath(".//*[@text='Enter Your Name']")).size() > 0) {
             findElement(By.className("android.widget.EditText")).sendKeys("8888");
             findElement(By.xpath(".//*[@text='Save']")).click();
+        }
+
+        MobileElement welcomeBtn = findElement(By.id("mi_done"));//viewpager show new feature welcome page
+        if (welcomeBtn != null){
+            welcomeBtn.click();
         }
 
         grantPermissionAfterLogin();
